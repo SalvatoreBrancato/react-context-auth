@@ -7,8 +7,9 @@ export default function HeaderComp(){
                 <h1 className="italic font-mono text-5xl">Blog Post</h1>
             </div>
             <div className="flex justify-end w-50">
-                <Link className="me-5" to="/">Home</Link>
-                <Link to="/post">Posts</Link>
+                <Link to="/">Home</Link>
+                <Link className="mx-5" to="/post">Posts</Link>
+                <Link to="/login">Login</Link>
             </div>
         </header>
     );

@@ -10,6 +10,7 @@ function AuthProvider({ children }) {
 
     function handleLogin(payload) {
         // Qui effettueremo la chiama API al server backend
+        console.log(payload)
     }
 
     function handleLogout() {
