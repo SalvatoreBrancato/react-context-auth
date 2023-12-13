@@ -11,13 +11,23 @@ export default function LogIn(){
       password: "",
     });
 
+    function handleField(key, value) {
+      setFormData((currentFormData)=>{
+        return {
+          ...currentFormData,
+          [key]: value
+        }
+      })
+    }
+
     function onLoginSubmit(e){
 
         e.preventDefault();
+
+        console.log(formData)
       
         handleLogin(formData)
 
-        navigate("/admin")
     }
 
     return (<>
@@ -36,7 +46,7 @@ export default function LogIn(){
                   </label>
                   <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="email" type="email" placeholder="Email"
-                    value={formData.email} onChange={(e)=>{setFormData('email')}} />
+                    value={formData.email} onChange={(e)=>{handleField('email', e.target.value)}} />
                 </div>
     
                 {/* Password */}
@@ -46,7 +56,7 @@ export default function LogIn(){
                   </label>
                   <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3
                     leading-tight focus:outline-none focus:shadow-outline" id="password" type="password"
-                    value={formData.password} onChange={(e)=>{setFormData('password')}} />
+                    value={formData.password} onChange={(e)=>{handleField('password', e.target.value)}} />
                   {/* <p className="text-xs italic">Please choose a password.</p> */}
                 </div>
     
